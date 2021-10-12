@@ -12,7 +12,7 @@ INITIAL_IMDB_ID = "tt0000001"
 # Requests
 response = requests.get(API_ADDRESS + "i=" + INITIAL_IMDB_ID)
 print(response)
-pprint(response.json())
+# pprint(response.json())
 
 #Create a 1000 IDs
 lst = [str(i).zfill(7) for i in range(1,1001)]
