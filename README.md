@@ -18,3 +18,10 @@ For this project we needed to instanciate 3 variables. Variables name are writte
 - ```API_KEY```: this is the personnal API key received from the OMDB website. 
 - ```API_ADDRESS```: this variable store the url needed to connect to the API endpoint.
 - ```INITIAL_IMDB_ID_PREFIX```: this variable store ids' prefix (i.e. 'tt').
+
+## Imports 
+- ```import requests```: we imported the requests library to communicate with the OMDB API. We used mainly the ```.get()``` method. 
+- ```import pandas as pd```: we imported the pandas library to handle the data retrieved from the API. Pandas allowed us to store the data in a DataFrame which made it easy to query. It also allowed us to export the database as json and csv files. 
+
+## Virtual Environment
+To make the collaboration between group member easier, we decided to create a python virtual environment, ```venv```. This allowed us to work with the same environment on each machine (same packages, same version, etc.). 
