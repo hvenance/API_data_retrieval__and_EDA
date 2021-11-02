@@ -1,8 +1,10 @@
 import requests
 import pandas as pd
+import json
+
 
 # Constant objects
-API_KEY = "bfea7860"
+API_KEY = "9d167066"
 API_ADDRESS = f"http://www.omdbapi.com/?apikey={API_KEY}&"
 INITIAL_IMDB_ID_PREFIX = "tt"
 
@@ -22,14 +24,11 @@ def generate_1000_ids():
 
 def populate_dataframe():
     ids_list = generate_1000_ids()
-    response = requests.get(API_ADDRESS + "i=" + ids_list[0])
-    response = response.json()
-
     df = pd.DataFrame()
     for id in ids_list:
         response = requests.get(API_ADDRESS + "i=" + id)
         response = response.json()
-        df.append(response, ignore_index=True)
+        df = df.append(response, ignore_index=True)
     return df
 
 
@@ -41,3 +40,6 @@ def create_database():
 
 if __name__ == "__main__":
     create_database()
+
+
+
