@@ -25,15 +25,18 @@ def populate_dataframe():
     response = requests.get(API_ADDRESS + "i=" + ids_list[0])
     response = response.json()
 
-    df = pd.DataFrame(data=response)
-
+    df = pd.DataFrame()
+    for id in ids_list:
+        response = requests.get(API_ADDRESS + "i=" + id)
+        response = response.json()
+        df.append(response, ignore_index=True)
     return df
 
 
 def create_database():
     data = populate_dataframe()
-    data.to_json("out.json")
-    print('out')
+    data.to_json("output_db.json")
+    print('Completed!')
 
 
 if __name__ == "__main__":
