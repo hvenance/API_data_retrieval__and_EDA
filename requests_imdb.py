@@ -1,6 +1,5 @@
 import requests
 import pandas as pd
-import json
 
 
 # Constant objects
@@ -35,6 +34,7 @@ def populate_dataframe():
 def create_database():
     data = populate_dataframe()
     data.to_json("output_db.json")
+    data.to_csv("output_db.csv")
     print('Completed!')
 
 

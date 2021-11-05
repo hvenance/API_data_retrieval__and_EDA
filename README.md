@@ -8,7 +8,7 @@ For the first part of the assignment we have been asked to create a 1000 rows da
 
 - ```populate_dataframe()```: this function takes one positional argument: a list of ids and returns a pandas dataframe. First, we initialize an empty pandas dataframe called ```df```. Second, we loop through the list of ids and for each id we send a request to the server (the OMDB API). We store the response in a variable ```response``` and transform it into a json object with the ```.json()``` function. Then we add the response into our dataframe. Finally, we return this dataframe.  
 
-- ```create_database()```: this function takes no positional arguments and output a _json ifle_. First, thanks to the two previous functions, we create a ```data``` variable containing our 1000 rows dataframe. Then, we export it as a json file. Finally, we print 'Completed!' to show the user that everythings succeeded.     
+- ```create_database()```: this function takes no positional arguments and output a _json file_. First, thanks to the two previous functions, we create a ```data``` variable containing our 1000 rows dataframe. Then, we export it as a json and a csv file. Finally, we print 'Completed!' to show the user that everythings succeeded.     
 
 
 We wrapped the ```created_database()``` function in a ```if __name__ == "__main__":``` in order to be able to export each individual function, if needed, without creating a database everytime. 
@@ -21,7 +21,7 @@ For this project we needed to instanciate 3 variables. Variables name are writte
 
 ## Imports 
 - ```import requests```: we imported the requests library to communicate with the OMDB API. We used mainly the ```.get()``` method. 
-- ```import pandas as pd```: we imported the pandas library to handle the data retrieved from the API. Pandas allowed us to store the data in a DataFrame which made it easy to query. It also allowed us to export the database as json and csv files. 
+- ```import pandas as pd```: we imported the pandas library to handle the data retrieved from the API. Pandas allowed us to store the data in a DataFrame which made it easy to query. It also allowed us to export the database as json and csv files.  
 
 ## Virtual Environment
 To make the collaboration between group member easier, we decided to create a python virtual environment, ```venv```. This allowed us to work with the same environment on each machine (same packages, same version, etc.). 
