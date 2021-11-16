@@ -1,5 +1,7 @@
 # Python and R for Data Science.
 
+#Task 1. Data collection task
+
 For the first part of the assignment we have been asked to create a 1000 rows database using an API. We chose the OMDB API. To create the database (output_db.json and output_db.csv), we used the following functions: 
 
 ## Functions
@@ -25,3 +27,80 @@ For this project we needed to instanciate 3 variables. Variables name are writte
 
 ## Virtual Environment
 To make the collaboration between group member easier, we decided to create a python virtual environment, ```venv```. This allowed us to work with the same environment on each machine (same packages, same version, etc.). 
+
+#Task 2. Data Analysis
+
+##Dataset-1
+
+
+##Dataset-2
+
+This dataset was retrieved on the GitHub repository available at this link: ```https://github.com/enricoromano/Python-and-R-project-```.
+It encompasses weather data accessed through the API [OpenMeteo](https://open-meteo.com/en/docs).
+In total, 
+
+###Imports
+Various libraries have been used:
+* ```library(dplyr)```: this library was used to manipulate the dataset (i.e. select particular variables, create new dataframe subsets,etc.)
+* ```library(ggplot2)```: ggplot2 is one of the most used tool for visualisation purposes in R.
+* ```library(ggmap)```: it is a library to visualize spatial data on static maps. It was used to visualise on a real map to which cities the latitude and longitude coordinates matched.
+* ```library(sf)```: this library allows to transform an object into a simple features which have emphasis on spatial geometry and coordinates.
+* ```library(mapview)```: it provides functions to very quickly and conveniently create interactive visualisations of spatial data.
+* ```library(corrplot)```: corrplot provides a visual exploratory tool on correlation matrix that helps detect hidden patterns among variables.
+* ```library(plotly)```: it supports the functions to create interactive graphs. Thanks to this library a 3D-plot was displayed for the apparent temperature, the actual one and the cities.
+* ```library(lubridate)```: it eases the handling of datatimes. 
+
+###Data cleaning
+Initially, the dataset was made of 1008 observations and 25 variables.
+However, the columns containing the unit values were **removed** as they are not useful for visualisation purposes.
+Columns were **renamed** to avoid unnecessary words and clarify the dataframe.
+
+After primary analyses, it standed out that data about only 5 cities were uploaded instead of the presumed 6 (see GitHub repo where the data were retrieved from).
+
+To remove duplicates we used the function ```distinct()``` from dplyr. 
+
+A **world map** was created to visualise the exact location of the cities and have a direct better understanding of next analyses.
+![world map](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\Map.png)
+
+Then, this scatterplot seems to indicate that elevation is not really an indicator of the temperature.
+![temperature](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\temp.png)
+
+It is further confirmed thanks to the next **facet visualisation**. 
+![facet](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\facet.png)
+
+Unsurprisingly given the plots, the **correlation** between elevation and temperature is close to 0.
+![corr_elevation](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\corr_elevation.png)
+
+To have a better visualization of which city had the highest temperature on each day, some manipulations have been made.
+Clearly, **Tokyo** has the highest temperature and **London** the coolest ones.
+![temp_cities](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\temp_cities.png)
+
+In the database, there were 2 kind of temperatures, namely the **air temperature 2 meters above the ground** and the **perceived
+feel-like temperature**. 
+As can be seen from the next 3D plot it seems that a higher apparent temperature is as expected related with a higher real measured temperature.
+
+
+In ordrer to confirm these visual insights, let us compute the correlation.
+The **correlation matrix** (on the new subset of the dataframe _feels_temp_by_cities_) correlations are really high between temperature and feels like temperature, as well as between temperatures and humidity.
+![corr_temps](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\corr_temps.png)
+
+
+
+Other variables were the **humidity** and the **precipitation**. 
+It seems that the **elevation** is slightly highly correlated with the humidity.
+Surprisingly, **precipitation** that happened the hour before the weather report does not seem correlated to **humidity** at all.
+![corr_water](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\corr_water.png)
+
+**Atmospheric pressure** is an indicator of weather. As such, according to National Geographic,
+when a low-pressure system moves into an area, it usually leads to cloudiness, wind, and precipitation. High-pressure systems usually lead to fair, calm weather. 
+Let's try to verifiy this stated fact.
+
+![corr_atm](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\corr_atm.png)
+
+
+Contrarily to what expected from national geographic, a higher **pressure** does not seem to indicate higher **precipitation**.
+
+In the end, the relation between the **freezing level height** and the **atmospheric pressure** was considered. 
+![pressure](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\pressure.png)
+From the scatterplot, it seems that freezing height is not really related to pressure.
+
