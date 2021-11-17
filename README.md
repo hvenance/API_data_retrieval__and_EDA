@@ -1,7 +1,10 @@
 # Python and R for Data Science.
 
+<<<<<<< HEAD
 #Task 1. Data collection task
 
+=======
+>>>>>>> 77f1cef7612314785e81049630a96c43b4074d63
 For the first part of the assignment we have been asked to create a 1000 rows database using an API. We chose the OMDB API. To create the database (output_db.json and output_db.csv), we used the following functions: 
 
 ## Functions
@@ -26,6 +29,7 @@ For this project we needed to instanciate 3 variables. Variables name are writte
 - ```import pandas as pd```: we imported the pandas library to handle the data retrieved from the API. Pandas allowed us to store the data in a DataFrame which made it easy to query. It also allowed us to export the database as json and csv files.  
 
 ## Virtual Environment
+<<<<<<< HEAD
 To make the collaboration between group member easier, we decided to create a python virtual environment, ```venv```. This allowed us to work with the same environment on each machine (same packages, same version, etc.). 
 
 #Task 2. Data Analysis
@@ -104,3 +108,6 @@ In the end, the relation between the **freezing level height** and the **atmosph
 ![pressure](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\pressure.png)
 From the scatterplot, it seems that freezing height is not really related to pressure.
 
+=======
+To make the collaboration between group member easier, we decided to create a python virtual environment, ```venv```. This allowed us to work with the same environment on each machine (same packages, same version, etc.). 
+>>>>>>> 77f1cef7612314785e81049630a96c43b4074d63
