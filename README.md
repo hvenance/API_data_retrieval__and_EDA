@@ -61,7 +61,7 @@ After primary analyses, it standed out that data about only 5 cities were upload
 To remove duplicates we used the function ```distinct()``` from dplyr. 
 
 A **world map** was created to visualise the exact location of the cities and have a direct better understanding of next analyses.
-![world map](../dataset2_plots/Map.png?sanitize=true)
+![world map](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/Map.png)
 
 Then, this scatterplot seems to indicate that elevation is not really an indicator of the temperature.
 ![temperature](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\temp.png)
