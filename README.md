@@ -60,21 +60,21 @@ After primary analyses, it standed out that data about only 5 cities were upload
 
 To remove duplicates we used the function ```distinct()``` from dplyr. 
 
-A **world map** was created to visualise the exact location of the cities and have a direct better understanding of next analyses.
+A **world map** was created to visualise the exact location of the cities and have a direct better understanding of next analyses.<br />
 ![world map](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/Map.png)
 
-Then, this scatterplot seems to indicate that elevation is not really an indicator of the temperature.
-![temperature](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\temp.png)
+Then, this scatterplot seems to indicate that elevation is not really an indicator of the temperature. <br />
+![temperature](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/temp.png)
 
-It is further confirmed thanks to the next **facet visualisation**. 
-![facet](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\facet.png)
+It is further confirmed thanks to the next **facet visualisation**. <br />
+![facet](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/facet.png)
 
-Unsurprisingly given the plots, the **correlation** between elevation and temperature is close to 0.
-![corr_elevation](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\corr_elevation.png)
+Unsurprisingly given the plots, the **correlation** between elevation and temperature is close to 0. <br />
+![corr_elevation](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/corr_elevation.png)
 
 To have a better visualization of which city had the highest temperature on each day, some manipulations have been made.
-Clearly, **Tokyo** has the highest temperature and **London** the coolest ones.
-![temp_cities](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\temp_cities.png)
+Clearly, **Tokyo** has the highest temperature and **London** the coolest ones. <br />
+![temp_cities](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/temp_cities.png)
 
 In the database, there were 2 kind of temperatures, namely the **air temperature 2 meters above the ground** and the **perceived
 feel-like temperature**. 
@@ -82,27 +82,27 @@ As can be seen from the next 3D plot it seems that a higher apparent temperature
 
 
 In ordrer to confirm these visual insights, let us compute the correlation.
-The **correlation matrix** (on the new subset of the dataframe _feels_temp_by_cities_) correlations are really high between temperature and feels like temperature, as well as between temperatures and humidity.
-![corr_temps](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\corr_temps.png)
+The **correlation matrix** (on the new subset of the dataframe _feels_temp_by_cities_) correlations are really high between temperature and feels like temperature, as well as between temperatures and humidity. <br />
+![corr_temps](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/corr_temps.png)
 
 
 
 Other variables were the **humidity** and the **precipitation**. 
 It seems that the **elevation** is slightly highly correlated with the humidity.
-Surprisingly, **precipitation** that happened the hour before the weather report does not seem correlated to **humidity** at all.
-![corr_water](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\corr_water.png)
+Surprisingly, **precipitation** that happened the hour before the weather report does not seem correlated to **humidity** at all. <br / >
+![corr_water](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/corr_water.png)
 
 **Atmospheric pressure** is an indicator of weather. As such, according to National Geographic,
 when a low-pressure system moves into an area, it usually leads to cloudiness, wind, and precipitation. High-pressure systems usually lead to fair, calm weather. 
-Let's try to verifiy this stated fact.
+Let's try to verifiy this stated fact. <br />
 
-![corr_atm](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\corr_atm.png)
+![corr_atm](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/corr_atm.png)
 
 
 Contrarily to what expected from national geographic, a higher **pressure** does not seem to indicate higher **precipitation**.
 
-In the end, the relation between the **freezing level height** and the **atmospheric pressure** was considered. 
-![pressure](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\pressure.png)
+In the end, the relation between the **freezing level height** and the **atmospheric pressure** was considered. <br />
+![pressure](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/pressure.png)
 From the scatterplot, it seems that freezing height is not really related to pressure.
 
 
