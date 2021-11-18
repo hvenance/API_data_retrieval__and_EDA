@@ -1,6 +1,6 @@
 # Python and R for Data Science.
 
-#Task 1. Data collection task
+# Task 1. Data collection task
 
 For the first part of the assignment we have been asked to create a 1000 rows database using an API. We chose the OMDB API. To create the database (output_db.json and output_db.csv), we used the following functions: 
 
@@ -29,18 +29,18 @@ For this project we needed to instanciate 3 variables. Variables name are writte
 
 To make the collaboration between group member easier, we decided to create a python virtual environment, ```venv```. This allowed us to work with the same environment on each machine (same packages, same version, etc.). 
 
-#Task 2. Data Analysis
+# Task 2. Data Analysis
 
-##Dataset-1
+## Dataset-1
 
 
-##Dataset-2
+## Dataset-2
 
 This dataset was retrieved on the GitHub repository available at this link: ```https://github.com/enricoromano/Python-and-R-project-```.
 It encompasses weather data accessed through the API [OpenMeteo](https://open-meteo.com/en/docs).
 In total, 
 
-###Imports
+### Imports
 Various libraries have been used:
 * ```library(dplyr)```: this library was used to manipulate the dataset (i.e. select particular variables, create new dataframe subsets,etc.)
 * ```library(ggplot2)```: ggplot2 is one of the most used tool for visualisation purposes in R.
@@ -51,7 +51,7 @@ Various libraries have been used:
 * ```library(plotly)```: it supports the functions to create interactive graphs. Thanks to this library a 3D-plot was displayed for the apparent temperature, the actual one and the cities.
 * ```library(lubridate)```: it eases the handling of datatimes. 
 
-###Data cleaning
+### Data cleaning
 Initially, the dataset was made of 1008 observations and 25 variables.
 However, the columns containing the unit values were **removed** as they are not useful for visualisation purposes.
 Columns were **renamed** to avoid unnecessary words and clarify the dataframe.
@@ -61,7 +61,7 @@ After primary analyses, it standed out that data about only 5 cities were upload
 To remove duplicates we used the function ```distinct()``` from dplyr. 
 
 A **world map** was created to visualise the exact location of the cities and have a direct better understanding of next analyses.
-![world map](https://https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/Map.png)
+![world map](https://https://github.com/loicvdk/python_and_r_luiss_2021/main/dataset2_plots/Map.png)
 
 Then, this scatterplot seems to indicate that elevation is not really an indicator of the temperature.
 ![temperature](C:\Users\Hadrien Venance\python_and_r_luiss_2021\python_and_r_luiss_2021\temp.png)
