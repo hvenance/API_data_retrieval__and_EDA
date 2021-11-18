@@ -89,7 +89,7 @@ The **correlation matrix** (on the new subset of the dataframe _feels_temp_by_ci
 
 Other variables were the **humidity** and the **precipitation**. 
 It seems that the **elevation** is slightly highly correlated with the humidity.
-Surprisingly, **precipitation** that happened the hour before the weather report does not seem correlated to **humidity** at all. <br / >
+Surprisingly, **precipitation** that happened the hour before the weather report does not seem correlated to **humidity** at all. <br />
 ![corr_water](https://github.com/loicvdk/python_and_r_luiss_2021/blob/main/dataset2_plots/corr_water.png)
 
 **Atmospheric pressure** is an indicator of weather. As such, according to National Geographic,
