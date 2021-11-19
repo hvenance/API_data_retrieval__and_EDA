@@ -38,7 +38,7 @@ To make the collaboration between group member easier, we decided to create a py
 
 This dataset was retrieved on the GitHub repository available at this link: ```https://github.com/enricoromano/Python-and-R-project-```.
 It encompasses weather data accessed through the API [OpenMeteo](https://open-meteo.com/en/docs).
-In total, 
+In total, there are initially 1008 instances or observations of 25 variables. 
 
 ### Imports
 Various libraries have been used:
