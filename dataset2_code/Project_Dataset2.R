@@ -107,7 +107,9 @@ ggplot(temperature_by_cities)+
   geom_point(mapping = aes(y = temperature, x= City_names , size = elevation))+
   ggtitle("Temperature in cities displayed with their elevation")+
   theme(plot.title = element_text(hjust = 0.5))
+
 #from this plot, we can rightfully inspect if there is a correlation between the temperature and the elevation of the cities
+
 
 temperature_by_cities$elevation <- as.numeric(temperature_by_cities$elevation)
 temperature_by_cities.cor <- cor(temperature_by_cities[,-3])
