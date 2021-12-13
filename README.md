@@ -35,16 +35,16 @@ To make the collaboration between group member easier, we decided to create a py
 
 ### Structure
 
-To analyse the data previously collected (see: Task 1), we used two differents files: a python file and a jupyter notebook respectively named graphs.py and data_explorer.ipynb.
+In order to analyse the data previously collected (see: Task 1), we used two differents files: a python file and a jupyter notebook respectively named graphs.py and data_explorer.ipynb.
 
 ### Imports 
-To manipulate the data, we used the well-known ```pandas``` and ```numpy``` python library. To plot those data, we used, as asked, the ```matplotlib``` python library.
+In order to manipulate the data, we used the well-known ```pandas``` and ```numpy``` python library. To plot those data, we used, as asked, the ```matplotlib``` python library.
 
 ### Data Cleaning and Visualisation
 
 Thanks to the pandas' ```describe()``` method, we quickly realised that we add a lot of missing data in the dataset. We decided to drop the column having missing values and then plot the interesting features one by one.        
 ![missing](graphs/missing.png) <br />
-As you can see in the graph above, for 5 features we had no data at all. That is why we decided to not include them in our analysis.
+   As you can see in the graph above, for 5 features we had no data at all. That is why we decided to not include them in our analysis.
 The rating and year feature could be used directly. The only cleaning necessary was to remove the potential missing values.        
 ![rating](graphs/ratings.png)   <br />
 In the graph bellow, we can see that our database contains only films from 1890 until 1915. This is important to keep in mind for the rest of the analysis.      
