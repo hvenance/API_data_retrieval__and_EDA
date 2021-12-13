@@ -33,6 +33,7 @@ def populate_dataframe(ids_list):
 def create_database():
     data = populate_dataframe(ids_list = generate_1000_ids())
     data.to_json("output_db.json")
+    data.to_csv("output_db.csv")
     print('Completed!')
 
 
