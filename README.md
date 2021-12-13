@@ -47,20 +47,20 @@ Thanks to the pandas' ```describe()``` method, we quickly realised that we add a
    As you can see in the graph above, for 5 features we had no data at all. That is why we decided to not include them in our analysis.
 The rating and year feature could be used directly. The only cleaning necessary was to remove the potential missing values.        
 ![rating](graphs/ratings.png)   <br />
-In the graph bellow, we can see that our database contains only films from 1890 until 1915. This is important to keep in mind for the rest of the analysis.      
+In the graph bellow, we can see that our database contains only films from 1890 until 1915. This is important to keep this in mind for the rest of the analysis.      
 ![hist_year](graphs/hist_year.png)   <br />
 
 We had a problem when plotting the _runtime_ feature. Indeed, the values where strings following this format "x min". Matplotlib does not know how to handle such values. For that reason we used the ```split(' ')``` method that allows us to split the string in different component after each space. Then we kept only the first part (i.e. the integer). Finally, we converted the previous with the ```int()``` function and exported the dataframe to a .csv file.    
 ![runtimes](graphs/runtime.png) <br />
-We have to note that the y-scale in the graph above is logaritmical, thanks to that we can more appreciate the fact that back in the days there were mostly short films.
-For the _genre_ feature we add a similar problem. Some films had mutliple genre and were written as follows: "genre1 genre2 ... genreN". We used the same ```split(' ')``` function. Then we append every genre to a more general list and exported it to a .csv file.       
+We have to note that the y-scale in the graph above is logaritmical. Thanks to that we can notice more clearly the fact that back in the days there were mostly short movies.
+For the _genre_ feature we had a similar problem. Some movies had mutliple genre and were written as follows: "genre1 genre2 ... genreN". We used the same ```split(' ')``` function. Then we append every genre to a more general list and exported it to a .csv file.       
 ![genre](graphs/genre.png) <br />
-The plot above, confirme our finding about the runtime feature. Indeed, we can see that almost every film is _short_. We can also see that the we have moslty drama, comedy and documentary.        
-For the _director_ feature, we used a python _default dictionary_ to count the number of occurrences of each director. We kept only the top directors (i.e. the one with more than 10 films directed) then we exported the dictionary in the _graph.py_ file. We did the exact same thing for the _country_ feature.       
+The plot above, confirme our finding about the runtime feature. Indeed, we can see that almost every movie is _short_. We can also see that the we have moslty drama, comedy and documentary.        
+For the _director_ feature, we used a python _default dictionary_ to count the number of occurrences of each director. We kept only the top directors (i.e. the one with more than 10 movies directed) then we exported the dictionary in the _graph.py_ file. We did the exact same thing for the _country_ feature.       
 ![director](graphs/director.png) <br />
 From the above plot, we can see that 3 directors stand out. Indeed G. Méliès, D.W. Griffith, and Alice Guy directed more than 100 films in a 25 years period. That seems pretty impressive.      
 ![county](graphs/country.png)  <br />
-As expected, the majority of films were shot in the US. More surprisingly, we can see that a lot of films (almost as much as the one shot in the US) were shot in France. 
+As expected, the majority of movies were shot in the US. More surprisingly, we can see that a lot of films (almost as much as the one shot in the US) were shot in France. 
 
 
 ### Visualisation Techniques
@@ -79,7 +79,7 @@ Various libraries have been used:
 * ```library(ggplot2)```: ggplot2 is one of the most used tool for visualisation purposes in R.
 * ```library(ggmap)```: it is a library to visualize spatial data on static maps. It was used to visualise on a real map to which cities the latitude and longitude coordinates matched.
 * ```library(sf)```: this library allows to transform an object into a simple features which have emphasis on spatial geometry and coordinates.
-* ```library(mapview)```: it provides functions to very quickly and conveniently create interactive visualisations of spatial data.
+* ```library(mapview)```: it provides functions very quickly and conveniently create interactive visualisations of spatial data.
 * ```library(corrplot)```: corrplot provides a visual exploratory tool on correlation matrix that helps detect hidden patterns among variables.
 * ```library(plotly)```: it supports the functions to create interactive graphs. Thanks to this library a 3D-plot was displayed for the apparent temperature, the actual one and the cities.
 * ```library(lubridate)```: it eases the handling of datatimes. 
@@ -115,14 +115,14 @@ As can be seen from the next 3D plot it seems that a higher apparent temperature
 
 
 In ordrer to confirm these visual insights, let us compute the correlation.
-The **correlation matrix** (on the new subset of the dataframe _feels_temp_by_cities_) correlations are really high between temperature and feels like temperature, as well as between temperatures and humidity. <br />
+The correlation matrix (on the new subset of the _feels_temp_by_cities_ data frame) shows very high correlations between temperature and temperature sensations, and between temperatures and humidity. <br />
 ![corr_temps](dataset2_plots/corr_temps.png)
 
 
 
 Other variables were the **humidity** and the **precipitation**. 
 It seems that the **elevation** is slightly highly correlated with the humidity.
-Surprisingly, **precipitation** that happened the hour before the weather report does not seem correlated to **humidity** at all. <br />
+Surprisingly, **precipitations** that happened the hour before the weather report do not seem correlated to **humidity** at all. <br />
 ![corr_water](dataset2_plots/corr_water.png)
 
 **Atmospheric pressure** is an indicator of weather. As such, according to National Geographic,
