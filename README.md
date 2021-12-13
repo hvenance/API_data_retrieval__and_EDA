@@ -43,23 +43,23 @@ To manipulate the data, we used the well-known ```pandas``` and ```numpy``` pyth
 ### Data Cleaning and Visualisation
 
 Thanks to the pandas' ```describe()``` method, we quickly realised that we add a lot of missing data in the dataset. We decided to drop the column having missing values and then plot the interesting features one by one.        
-![missing](graphs/missing.png)
+![missing](graphs/missing.png) <br />
 As you can see in the graph above, for 5 features we had no data at all. That is why we decided to not include them in our analysis.
 The rating and year feature could be used directly. The only cleaning necessary was to remove the potential missing values.
-![rating](graphs/ratings.png)   
+![rating](graphs/ratings.png)   <br />
 In the graph bellow, we can see that our database contains only films from 1890 until 1915. This is important to keep in mind for the rest of the analysis.
-![hist_year](graphs/hist_year.png)   
+![hist_year](graphs/hist_year.png)   <br />
 
-We had a problem when plotting the _runtime_ feature. Indeed, the values where strings following this format "x min". Matplotlib does not know how to handle such values. For that reason we used the ```split(' ')``` method that allows us to split the string in different component after each space. Then we kept only the first part (i.e. the integer). Finally, we converted the previous with the ```int()``` function and exported the dataframe to a .csv file.     
-![runtimes](graphs/runtime.png)
+We had a problem when plotting the _runtime_ feature. Indeed, the values where strings following this format "x min". Matplotlib does not know how to handle such values. For that reason we used the ```split(' ')``` method that allows us to split the string in different component after each space. Then we kept only the first part (i.e. the integer). Finally, we converted the previous with the ```int()``` function and exported the dataframe to a .csv file.    
+![runtimes](graphs/runtime.png) <br />
 We have to note that the y-scale in the graph above is logaritmical, thanks to that we can more appreciate the fact that back in the days there were mostly short films.
 For the _genre_ feature we add a similar problem. Some films had mutliple genre and were written as follows: "genre1 genre2 ... genreN". We used the same ```split(' ')``` function. Then we append every genre to a more general list and exported it to a .csv file.       
-![genre](graphs/genre.png)
+![genre](graphs/genre.png) <br />
 The plot above, confirme our finding about the runtime feature. Indeed, we can see that almost every film is _short_. We can also see that the we have moslty drama, comedy and documentary. 
 For the _director_ feature, we used a python _default dictionary_ to count the number of occurrences of each director. We kept only the top directors (i.e. the one with more than 10 films directed) then we exported the dictionary in the _graph.py_ file. We did the exact same thing for the _country_ feature.
-![director](graphs/director.png)
+![director](graphs/director.png) <br />
 From the above plot, we can see that 3 directors stand out. Indeed G. Méliès, D.W. Griffith, and Alice Guy directed more than 100 films in a 25 years period. That seems pretty impressive. 
-![county](graphs/country.png)
+![county](graphs/country.png)  <br />
 As expected, the majority of films were shot in the US. More surprisingly, we can see that a lot of films (almost as much as the one shot in the US) were shot in France. 
 
 
