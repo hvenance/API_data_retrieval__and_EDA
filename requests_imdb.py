@@ -1,6 +1,5 @@
 import requests
 import pandas as pd
-import json
 
 
 # Constant objects
@@ -22,8 +21,7 @@ def generate_1000_ids():
     return ids_list
 
 
-def populate_dataframe():
-    ids_list = generate_1000_ids()
+def populate_dataframe(ids_list):
     df = pd.DataFrame()
     for id in ids_list:
         response = requests.get(API_ADDRESS + "i=" + id)
@@ -33,7 +31,7 @@ def populate_dataframe():
 
 
 def create_database():
-    data = populate_dataframe()
+    data = populate_dataframe(ids_list = generate_1000_ids())
     data.to_json("output_db.json")
     print('Completed!')
 
