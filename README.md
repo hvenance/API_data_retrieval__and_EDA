@@ -135,7 +135,7 @@ Let's try to verifiy this stated fact. <br />
 Contrarily to what expected from national geographic, a higher **pressure** does not seem to indicate higher **precipitation**.
 
 In the end, the relation between the **freezing level height** and the **atmospheric pressure** was considered. <br />
-![pressure](dataset2_plots/pressure.png)
+![pressure](dataset2_plots/pressure.png)      <br />
 From the scatterplot, it seems that freezing height is not really related to pressure.
 
 
